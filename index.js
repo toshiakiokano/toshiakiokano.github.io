@@ -1,6 +1,4 @@
-const medias = {audio: false, video; {
-    facingMode: "user"
-}};
+const medias = {audio: false, video; true};
 //const medias = {audio: false, video: true};
 const video = document.getElementById("video");
 
