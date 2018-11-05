@@ -48,12 +48,13 @@
 <script>
     (function() {
         var message = document.getElementById("msg");
+        console.log(111)
 
         Tesseract
-            .recognize({
+            .recognize("anim2.gif", {
                 lang: 'eng'
             })
-            .prgress(function(p) {
+            .progress(function(p) {
                 message.innerText = "準備中" + p.status + ":  " + (100 * p.progress).toFixed(1) + "%";
             })
             .then(function(result) {
