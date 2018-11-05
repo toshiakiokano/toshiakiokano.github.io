@@ -1,13 +1,11 @@
 'use strict'
 
-/*
 const medias = {audio: false, video: {
                     facingMode: {
                         exact: 'environment'
                     }
                 }},
-                */
-const medias = {audio: false, video: true},
+//const medias = {audio: false, video: true},
     video = document.getElementById("video"),
     canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d");
