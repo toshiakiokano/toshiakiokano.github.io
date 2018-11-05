@@ -18,10 +18,10 @@ requestAnimationFrame(draw);
 
 function successCallback(stream) {
     video.srcObject = stream;
-}
+};
 function errorCallback(error) {
     alert(error);
-}
+};
 
 function draw() {
     canvas.width = window.innerWidth;
@@ -44,4 +44,3 @@ function draw() {
     ctx.putImageData(imgData, 0, 0);
     requestAnimationFrame(draw);
 }
-
