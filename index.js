@@ -14,7 +14,6 @@ const medias = {audio: false, video: true},
 
 let imgData, data, ave;
 
-navigator.getUserMedia(medias, successCallback, errorCallback);
 
 
 requestAnimationFrame(draw);
@@ -69,10 +68,10 @@ captureButton.addEventListener('click', function() {
             lang: 'eng'
         })
         .progress(function(p) {
-            //$("#msg").text(p.status + ": " + p.progress)
             message.innerText = p.status + ": " + p.progress;
         })
         .then(function(result) {
+            message.innerText = "Progress Complete";
             var elem = document.createElement('div');
             elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#eee;'><img src=" + url + " /></div><br>"
             var parent = document.getElementById("results");
@@ -84,3 +83,4 @@ captureButton.addEventListener('click', function() {
             num += 1;
         });
 });
+navigator.getUserMedia(medias, successCallback, errorCallback);
