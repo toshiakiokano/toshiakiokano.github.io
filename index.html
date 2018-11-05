@@ -32,7 +32,7 @@
 
             Tesseract
                 .recognize("u.jpg", {
-                    lang: 'eng'
+                    lang: 'jpn'
                 })
                 .progress(function(p) {
                     message.innerText = "準備中" + p.status + ":  " + (100 * p.progress).toFixed(1) + "%";
