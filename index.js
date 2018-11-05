@@ -1,10 +1,13 @@
 'use strict'
 
+/*
 const medias = {audio: false, video: {
                     facingMode: {
                         exact: 'environment'
                     }
                 }},
+                */
+const medias = {audio: false, video: true},
     video = document.getElementById("video"),
     canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d");
@@ -45,3 +48,39 @@ function draw() {
     ctx.putImageData(imgData, 0, 0);
     requestAnimationFrame(draw);
 }
+
+
+/////////////
+
+
+const snapshotCanvas = document.getElementById('snapshot'),
+    captureButton = document.getElementById('capture');
+var num = 1;
+let message = document.getElementById("msg");
+
+
+captureButton.addEventListener('click', function() {
+    var context = snapshot.getContext('2d');
+    context.drawImage(video, 100, 300, 600, 200, 0, 0, snapshotCanvas.width,
+        snapshotCanvas.height);
+    const url = snapshot.toDataURL("image/png");
+    Tesseract
+        .recognize(url, {
+            lang: 'eng'
+        })
+        .progress(function(p) {
+            //$("#msg").text(p.status + ": " + p.progress)
+            message.innerText = p.status + ": " + p.progress;
+        })
+        .then(function(result) {
+            var elem = document.createElement('div');
+            elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#eee;'><img src=" + url + " /></div><br>"
+            var parent = document.getElementById("results");
+            parent.insertBefore(elem, parent.firstChild);
+            var numdiv = document.getElementById(num);
+            var msg = document.createElement('div');
+            msg.innerHTML = result.text;
+            numdiv.appendChild(msg);
+            num += 1;
+        });
+});
