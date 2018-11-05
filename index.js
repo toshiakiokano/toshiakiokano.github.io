@@ -1,10 +1,12 @@
 'use strict'
+/*
 const medias = {audio: false, video: {
                     facingMode: {
                         exact: 'environment'
                     }
                 }},
-//const medias = {audio: false, video: true},
+                */
+const medias = {audio: false, video: true},
     video = document.getElementById("video"),
     canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d");
@@ -27,8 +29,8 @@ function draw() {
     canvas.height = 100
     //window.innerHeight;
 
-    ctx.drawImage(video, 0, 0);
-    //ctx.drawImage(video, 100, 300, 600, 200,
+    //ctx.drawImage(video, 0, 0);
+    ctx.drawImage(video, 100, 300, 600, 200,
         0, 0, 300, 100);
 
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
