@@ -29,8 +29,8 @@ function draw() {
     canvas.height = 100
     //window.innerHeight;
 
-    //ctx.drawImage(video, 0, 0);
-    ctx.drawImage(video, 100, 300, 600, 200,
+    ctx.drawImage(video, 0, 0);
+    //ctx.drawImage(video, 100, 300, 600, 200,
         0, 0, 300, 100);
 
     imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
