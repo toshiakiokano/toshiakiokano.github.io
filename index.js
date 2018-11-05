@@ -20,8 +20,9 @@ function successCallback(stream) {
     video.srcObject = stream;
 };
 function errorCallback(error) {
-    alert(error);
+    console.log(error);
 };
+
 
 function draw() {
     canvas.width = window.innerWidth;
