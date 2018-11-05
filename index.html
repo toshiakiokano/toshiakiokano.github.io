@@ -41,12 +41,10 @@
 <canvas id="snapshot" width="300" height="100"></canvas>
 <br>
 
-<script src="index.js"></script>
 
 <script>
     (function() {
         var message = document.getElementById("msg");
-        console.log(message)
 
         Tesseract
             .recognize("u.jpg", {
@@ -61,7 +59,8 @@
     }());
 </script>
 
+<script src="index.js"></script>
 
-<div id="results" align="center"></div>
 </body>
+<div id="results"></div>
 </html>
