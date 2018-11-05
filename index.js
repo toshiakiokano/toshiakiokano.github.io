@@ -46,17 +46,18 @@ captureButton.addEventListener('click', function() {
 
             message.innerText = "Progress Complete";
 
-            var elem = document.createElement('div');
+            let elem = document.createElement('div');
             elem.innerHTML = "<div id=" + num + " style='width:300px;'><img src=" + url + " /></div><br>"
 
-            var parent = document.getElementById("results");
+            let parent = document.getElementById("results");
             parent.insertBefore(elem, parent.firstChild);
 
-            var numdiv = document.getElementById(num);
-            var msg = document.createElement('div');
+            let numdiv = document.getElementById(num);
+            let msg = document.createElement('div');
 
             msg.innerHTML = result.text;
             numdiv.appendChild(msg);
+
             num += 1;
         });
 });
