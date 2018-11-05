@@ -74,6 +74,7 @@ captureButton.addEventListener('click', function() {
             message.innerText = p.status + ": " + p.progress;
         })
         .then(function(result) {
+            console.log(result);
             message.innerText = "Progress Complete";
             var elem = document.createElement('div');
             elem.innerHTML = "<div id=" + num + " style='width:300px;'><img src=" + url + " /></div><br>"
