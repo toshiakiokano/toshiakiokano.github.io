@@ -41,23 +41,6 @@
 <br>
 
 
-<script>
-    (function() {
-        var message = document.getElementById("msg");
-
-        Tesseract
-            .recognize("u.jpg", {
-                lang: 'jpn'
-            })
-            .progress(function(p) {
-                message.innerText = "準備中" + p.status + ":  " + (100 * p.progress).toFixed(1) + "%";
-            })
-            .then(function(result) {
-                message.innerText = "準備完了";
-            })
-    }());
-</script>
-
 <script src="index.js"></script>
 
 </body>

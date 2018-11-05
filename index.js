@@ -15,7 +15,9 @@ const medias = {audio: false, video: true},
     canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     snapshotCanvas = document.getElementById('snapshot'),
-    captureButton = document.getElementById('capture');
+    captureButton = document.getElementById('capture'),
+    message = document.getElementById("msg");
+
 
 var num = 1;
 
@@ -28,8 +30,7 @@ var num = 1;
 
 
 captureButton.addEventListener('click', function() {
-    var context = snapshot.getContext('2d');
-    let message = document.getElementById("msg");
+    let context = snapshot.getContext('2d');
 
     context.drawImage(video, 100, 300, 600, 200, 0, 0, snapshotCanvas.width,
         snapshotCanvas.height);
@@ -71,6 +72,7 @@ captureButton.addEventListener('click', function() {
 ///////////////
 requestAnimationFrame(draw);
 navigator.getUserMedia(medias, successCallback, errorCallback);
+firstLoading();
 
 
 
@@ -108,4 +110,18 @@ function draw() {
 
     ctx.putImageData(imgData, 0, 0);
     requestAnimationFrame(draw);
+}
+
+
+function firstLoading() {
+    Tesseract
+        .recognize("u.jpg", {
+            lang: 'jpn'
+        })
+        .progress(function(p) {
+            message.innerText = "準備中" + p.status + ":  " + (100 * p.progress).toFixed(1) + "%";
+        })
+        .then(function(result) {
+            message.innerText = "準備完了";
+        });
 }
