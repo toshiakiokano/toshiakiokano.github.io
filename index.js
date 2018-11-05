@@ -1,5 +1,8 @@
-const medias = {audio: false, video; true};
-//const medias = {audio: false, video: true};
+const medias = {audio: false, video; {
+    facingMode: {
+        exact: 'environment'
+    }
+}};
 const video = document.getElementById("video");
 
 navigator.getUserMedia(medias, successCallback, errorCallback);
