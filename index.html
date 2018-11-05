@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <meta content='noindex' name='robots'>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <!--    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
@@ -46,5 +45,21 @@
 
 
 
+<script>
+    (function() {
+        var message = document.getElementById("msg");
+
+        Tesseract
+            .recognize({
+                lang: 'eng'
+            })
+            .prgress(function(p) {
+                message.innerText = "準備中" + p.status + ":  " + (100 * p.progress).toFixed(1) + "%";
+            })
+            .then(function(result) {
+                message.innerText = "準備完了";
+            })
+    }());
+</script>
 </body>
 </html>
