@@ -1,6 +1,8 @@
 'use strict'
 
+///////////////
 // variable
+///////////////
 /*
 const medias = {audio: false, video: {
                     facingMode: {
@@ -20,9 +22,9 @@ var num = 1;
 
 
 
-/////////////
+///////////////
 //click action
-/////////////
+///////////////
 
 
 captureButton.addEventListener('click', function() {
@@ -64,13 +66,17 @@ captureButton.addEventListener('click', function() {
 
 
 
-//
+///////////////
+// initialize
+///////////////
 requestAnimationFrame(draw);
 navigator.getUserMedia(medias, successCallback, errorCallback);
 
 
 
+///////////////
 // functions
+///////////////
 function successCallback(stream) {
     video.srcObject = stream;
 };
