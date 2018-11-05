@@ -1,13 +1,11 @@
 'use strict'
 
-/*
 const medias = {audio: false, video: {
                     facingMode: {
                         exact: 'environment'
                     }
                 }},
-                */
-const medias = {audio: false, video: true},
+//const medias = {audio: false, video: true},
     video = document.getElementById("video"),
     canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d");
@@ -75,7 +73,7 @@ captureButton.addEventListener('click', function() {
         .then(function(result) {
             message.innerText = "Progress Complete";
             var elem = document.createElement('div');
-            elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#eee;'><img src=" + url + " /></div><br>"
+            elem.innerHTML = "<div id=" + num + " style='width:300px;'><img src=" + url + " /></div><br>"
             var parent = document.getElementById("results");
             parent.insertBefore(elem, parent.firstChild);
             var numdiv = document.getElementById(num);
