@@ -1,6 +1,6 @@
 'use strict'
 
-const medias = {audio: false, video; {
+const medias = {audio: false, video: {
                     facingMode: {
                         exact: 'environment'
                     }
