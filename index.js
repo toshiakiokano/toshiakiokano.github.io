@@ -28,7 +28,7 @@ var num = 1;
 
 
 captureButton.addEventListener('click', function() {
-    let context = snapshot.getContext('2d');
+    const context = snapshot.getContext('2d');
 
     context.drawImage(video, 100, 300, 600, 200, 0, 0, snapshotCanvas.width,
         snapshotCanvas.height);
